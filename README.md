@@ -1,2 +1,22 @@
-# HackIllinois2018_RAD
-Make Open Source more open by helping beginners find projects to start with. 
+# [NAME OF PROJECT]
+
+[PROJECT DESCRIPTION]
+  * [PROJECT FEATURES] 
+
+## USAGE
+  * [USAGE EXAMPLE]
+  
+## BUILD/INSTALLATION INSTRUCTIONS
+  * [PLATFORM 1]
+    * [BUILD EXAMPLE]
+  * [PLATFORM 2]
+    * [BUILD EXAMPLE]
+
+## [INTERFACES] _(if applicable)_ 
+
+## OTHER SOURCES OF DOCUMENTATION
+
+## Contributor Guide
+[LINK TO CONTRIBUTING.md]
+
+## License 
