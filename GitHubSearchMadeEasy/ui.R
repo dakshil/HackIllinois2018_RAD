@@ -8,7 +8,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       textInput('searchTextInput',
                 'Enter Search Query',
-                placeholder = 'search query'),
+                placeholder = 'search query or leave blank'),
       uiOutput('displayLanguagesSelectInput')
     ),
     
