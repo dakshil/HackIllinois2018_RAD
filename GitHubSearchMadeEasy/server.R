@@ -1,6 +1,7 @@
 library(shiny)
 library(lubridate)
 library(httr)
+library(DT)
 shinyServer(function(input, output) {
    
   output$displayLanguagesSelectInput <- renderUI({
@@ -39,7 +40,7 @@ shinyServer(function(input, output) {
     content_frame
   }
   
-  output$results <- renderTable({
+  output$results <- DT::renderDataTable({
     if (input$searchButton == 0)
       return()
     
@@ -65,8 +66,8 @@ shinyServer(function(input, output) {
       full_frame <- full_frame[order(full_frame$Updated_date), ]
       full_frame[, c('URL', 'Title', 'Description')]
     }) 
-  }, sanitize.text.function = function(x) x,
-  striped = TRUE,
-  bordered = TRUE)
+  },
+      escape=FALSE
+  )
   
 })
