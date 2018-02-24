@@ -1,7 +1,6 @@
 library(shiny)
 library(lubridate)
 library(httr)
-
 shinyServer(function(input, output) {
    
   output$displayLanguagesSelectInput <- renderUI({
@@ -65,7 +64,7 @@ shinyServer(function(input, output) {
       
       full_frame <- full_frame[order(full_frame$Updated_date), ]
       full_frame[, c('URL', 'Title', 'Description')]
-    })
+    }) 
   }, sanitize.text.function = function(x) x,
   striped = TRUE,
   bordered = TRUE)
