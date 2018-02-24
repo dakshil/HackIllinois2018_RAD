@@ -9,10 +9,12 @@ shinyUI(fluidPage(
       textInput('searchTextInput',
                 'Enter Search Query',
                 placeholder = 'search query or leave blank'),
-      uiOutput('displayLanguagesSelectInput')
+      uiOutput('displayLanguagesSelectInput'),
+      actionButton('searchButton', 'Search')
     ),
     
     mainPanel(
+      tableOutput('results')
     )
   )
 ))

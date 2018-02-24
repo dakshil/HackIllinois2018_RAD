@@ -1,11 +1,11 @@
 //10616 results
-https://api.github.com/search/issues?q=TOPICPLACEHOLDER+label:help%20wanted+language:LANGUAGEPLACEHODLER+state:open&sort=created&order=asc&license=LICENSEHOLDER
+https://api.github.com/search/issues?q=TOPICPLACEHOLDER+label:help%20wanted+language:LANGUAGEPLACEHODLER+state:open&sort=updated&order=desc
 
 //4359 results
-https://api.github.com/search/issues?q=+label:up-for-grabs+state:open&sort=created&order=asc
+https://api.github.com/search/issues?q=+label:up-for-grabs+language:LANGUAGEPLACEHODLER+state:open&sort=updated&order=desc
 
 //2644 results
-https://api.github.com/search/issues?q=TOPICPLACEHOLDER+label:%20beginner+language:LANGUAGEPLACEHOLDER+state:open&sort=created&order=asc&license=LICENSEHOLDER
+https://api.github.com/search/issues?q=TOPICPLACEHOLDER+label:%20beginner+language:LANGUAGEPLACEHOLDER+state:open&sort=created&order=desc
 
 //309 results
 https://api.github.com/search/issues?q=+label:first-timers-only+state:open&sort=created&order=asc
