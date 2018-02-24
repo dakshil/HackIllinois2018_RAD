@@ -48,11 +48,13 @@ shinyServer(function(input, output) {
     
       query_helpwanted <- GET(paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:help-wanted+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc'))
       query_upforgrabs <- GET(paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:up-for-grabs+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc'))
-      query_beglang <- GET(paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20beginner+language:', input$languageSelectInput, '+state:open&sort=created&order=desc'))
+      query_beglang <- GET(paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20beginner+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc'))
+      query_goodfirstissue <- GET(paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20good%20first%20issue+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc'))
       
       full_frame <- createFrameForRepos(query_helpwanted)
       full_frame <- rbind(full_frame, createFrameForRepos(query_upforgrabs))
       full_frame <- rbind(full_frame, createFrameForRepos(query_beglang))
+      full_frame <- rbind(full_frame, createFrameForRepos(query_goodfirstissue))
       
       full_frame <- full_frame[order(full_frame$Updated_date), ]
       
