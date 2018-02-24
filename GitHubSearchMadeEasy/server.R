@@ -45,11 +45,17 @@ shinyServer(function(input, output) {
       return()
     
     isolate({
-    
-      query_helpwanted <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:help-wanted+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
-      query_upforgrabs <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:up-for-grabs+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
-      query_beglang <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20beginner+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
-      query_goodfirstissue <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20good%20first%20issue+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
+      if(input$languageSelectInput == "Any") {
+        query_helpwanted <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:help-wanted+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
+        query_upforgrabs <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:up-for-grabs+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
+        query_beglang <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20beginner+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
+        query_goodfirstissue <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20good%20first%20issue+language:', input$languageSelectInput, '+state:open&sort=updated&order=desc')))
+      } else {
+        query_helpwanted <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:help-wanted+state:open&sort=updated&order=desc')))
+        query_upforgrabs <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:up-for-grabs+state:open&sort=updated&order=desc')))
+        query_beglang <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20beginner+state:open&sort=updated&order=desc')))
+        query_goodfirstissue <- GET(gsub(" ","%20",paste0('https://api.github.com/search/issues?q=', input$searchTextInput, '+label:%20good%20first%20issue+state:open&sort=updated&order=desc')))
+      }
       
       full_frame <- createFrameForRepos(query_helpwanted)
       full_frame <- rbind(full_frame, createFrameForRepos(query_upforgrabs))
