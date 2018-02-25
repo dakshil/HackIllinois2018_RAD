@@ -32,13 +32,10 @@ One of the salient features of the project is that the success of GithubSearch M
 ## BUILD/INSTALLATION INSTRUCTIONS
   The packages can be installed from CRAN:
 
-<code>library(shiny)</code>
-
-<code>library(lubridate)</code>
-
-<code>library(httr)</code>
-
-<code>library(DT)</code>
+* <code>install.packages(shiny)</code>
+* <code>install.packages(lubridate)</code>
+* <code>install.packages(httr)</code>
+* <code>install.packages(DT)</code>
 
 ## Contributor Guide
 <a href="https://github.com/dakshil/HackIllinois2018_RAD/blob/master/CONTRIBUTING.md">Contributer Guide</a>
