@@ -40,11 +40,8 @@ One of the salient features of the project is that the success of GithubSearch M
 
 <code>library(DT)</code>
 
-
-## OTHER SOURCES OF DOCUMENTATION
-
 ## Contributor Guide
-[LINK TO CONTRIBUTING.md]
+<a href="https://github.com/dakshil/HackIllinois2018_RAD/blob/master/CONTRIBUTING.md">Contributer Guide</a>
 
 ## License 
 Released under the <a href="https://github.com/dakshil/HackIllinois2018_RAD/blob/master/LICENSE">GPL-3 License</a>.
