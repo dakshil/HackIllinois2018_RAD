@@ -33,8 +33,7 @@ shinyUI(fluidPage(
     mainPanel(
       wellPanel(
         DT::dataTableOutput('results'),
-        style = "overflow-y:scroll; max-height: 500px;
-                       overflow-x:scroll; auto"
+        style = "overflow-x:scroll; auto"
       )
     )
   )
